@@ -14,6 +14,6 @@ const StyledTable = styled.table`
     }
 `;
 
-export default function (props) {
+export default function Table(props) {
     return <StyledTable {...props} />
 }

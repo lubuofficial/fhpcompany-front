@@ -7,6 +7,7 @@ import Table from "@/components/Table";
 import axios from "axios";
 import { useSession } from "next-auth/react";
 import { RevealWrapper } from "next-reveal";
+import Image from "next/image";
 import { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 
@@ -242,7 +243,7 @@ export default function CartPage() {
                       <tr key={product._id}>
                         <ProductInfoCell>
                           <ProductImageBox>
-                            <img src={product.images[0]} alt="" />
+                            <Image src={product.images[0]} alt="" />
                           </ProductImageBox>
                           {product.title}
                         </ProductInfoCell>

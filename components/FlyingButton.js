@@ -3,6 +3,7 @@ import { ButtonStyle } from "./Button";
 import styled from "styled-components";
 import { useContext, useEffect, useRef, useState } from "react";
 import { CartContext } from "./CartContext";
+import Image from "next/image";
 
 const FlyingButtonWrapper = styled.div`
   button {
@@ -78,7 +79,7 @@ useEffect(() => {
         main={props.main}
         onClick={() => addProduct(props._id)}
       >
-         <img src={props.src} alt="" ref={imgRef} />
+         <Image src={props.src} alt="" ref={imgRef} />
         <button onClick={ev => sendImageToCart(ev)} {...props} />
       </FlyingButtonWrapper>
     </>

@@ -3,6 +3,7 @@ import { SessionProvider } from "next-auth/react";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
+@import url ('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
   body{
     background-color: #eee;
     padding:0;
@@ -19,11 +20,6 @@ const GlobalStyles = createGlobalStyle`
 export default function App({ Component, pageProps: {session, ...pageProps} }) {
   return (
     <>
-      {/* <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"></link> */}
-      <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-      ></link>
       <GlobalStyles />
       <SessionProvider session={session}>
         <CartContextProvider>
