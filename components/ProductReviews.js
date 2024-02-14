@@ -114,8 +114,8 @@ export default function ProductReviews({ product }) {
             {reviewsLoading && <Spinner fullWidth={true} />}
             {reviews.length === 0 && <p>No reviews</p>}
             {reviews.length > 0 &&
-              reviews.map((review) => (
-                <ReviewWrapper>
+              reviews.map(review => (
+                <ReviewWrapper key={review._id}>
                   <ReviewHeader>
                     <StarsRating
                       size={"sm"}
