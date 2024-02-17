@@ -100,7 +100,7 @@ export default function ProductBox({
   wished=false,
   onRemoveFromWishlist=()=>{},
 }) {
-  const url = "/product/" + _id;
+  const url = '/product/' + _id;
   const [isWished, setIsWished] = useState(wished);
   function addToWishlist(ev) {
     ev.preventDefault();

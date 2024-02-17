@@ -17,7 +17,7 @@ export default function NewProducts({products,wishedProducts}) {
         <Center>
             <Title>Our products</Title>
             
-            <ProductsGrid products={products} wishedProducts={wishedProducts} />
+            <ProductsGrid products={products} wishedProducts={wishedProducts}/>
             
         </Center>
         

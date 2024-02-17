@@ -1,4 +1,4 @@
-export default function SearchIcon({className = "w-6 h-6"}) {
+export default function SearchIcon({className = "w-8 h-8"}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,7 +6,7 @@ export default function SearchIcon({className = "w-6 h-6"}) {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 h-6"
+      className="w-8 h-8"
     >
       <path
         strokeLinecap="round"

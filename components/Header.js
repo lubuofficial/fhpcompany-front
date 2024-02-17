@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import { CartContext } from "./CartContext";
 import BarsIcon from "./icons/Bars";
 import SearchIcon from "./icons/SearchIcon";
+import { FaShoppingCart } from "react-icons/fa";
 
 const StyleHeader = styled.header`
   background-color: #00004d;
@@ -103,7 +104,11 @@ export default function Header() {
             <NavLink href={"/products"}>All Products</NavLink>
             <NavLink href={"/categories"}>Categories</NavLink>
             <NavLink href={"/account"}>Account</NavLink>
-            <NavLink href={"/cart"}>Cart ({cartProducts.length})</NavLink>
+            <NavLink href={"/cart"} style={{ display: 'inline-flex', alignItems: 'center', marginTop: '-2px' }}><FaShoppingCart style={{ marginRight: '5px' }} />
+      {cartProducts.length > 0 && (
+        <span style={{ marginLeft: '2px' }}>({cartProducts.length})</span>
+      )}
+    </NavLink>
           </StyledNav>
           <SideIcons>
           <Link href={"/search"}><SearchIcon /></Link>

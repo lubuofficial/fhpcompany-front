@@ -10,11 +10,7 @@ import { getServerSession } from "next-auth";
 import Footer from "@/components/Footer";
 import styled from "styled-components";
 
-const FooterContainer = styled.div`
-position: fixed;
-  bottom: 0;
-  width: 100%;
-  `;
+
 
 export default function ProductsPage({products,wishedProducts}) {
     return (
@@ -23,7 +19,8 @@ export default function ProductsPage({products,wishedProducts}) {
             <Center>
                 <Title>All Products</Title>
                 <ProductsGrid products={products} wishedProducts={wishedProducts} />
-            </Center>     
+            </Center>  
+            <Footer />   
         </>
     );
 }

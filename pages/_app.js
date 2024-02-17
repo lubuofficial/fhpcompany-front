@@ -1,4 +1,5 @@
 import { CartContextProvider } from "@/components/CartContext";
+import Footer from "@/components/Footer";
 import { SessionProvider } from "next-auth/react";
 import { createGlobalStyle } from "styled-components";
 

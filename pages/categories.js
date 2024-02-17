@@ -10,6 +10,7 @@ import { getServerSession } from "next-auth";
 import { WishedProduct } from "@/models/WishedProduct";
 import { mongooseConnect } from "@/lib/mongoose";
 import { authOptions } from "./api/auth/[...nextauth]";
+import Footer from "@/components/Footer";
 
 const CategoryGrid = styled.div`
   display: grid;
@@ -79,6 +80,7 @@ export default function CategoriesPage({ mainCategories, categoriesProducts, wis
           </CategoryWrapper>
         ))}
       </Center>
+      <Footer />
     </>
   );
 }

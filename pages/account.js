@@ -13,6 +13,7 @@ import { RevealWrapper } from "next-reveal";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import SingleOrder from "@/components/SingleOrder";
+import Footer from "@/components/Footer";
 
 const ColsWrapper = styled.div`
   display: grid;
@@ -224,6 +225,7 @@ export default function AccountPage() {
           </div>
         </ColsWrapper>
       </Center>
+      <Footer />
     </>
   );
 }
