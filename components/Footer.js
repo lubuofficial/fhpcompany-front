@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { FaFacebook } from 'react-icons/fa';
 import React from 'react';
-import { NavLink } from "react-router-dom";
 
 const FooterContainer = styled.footer`
   background-color: #444;
