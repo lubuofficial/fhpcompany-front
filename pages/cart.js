@@ -199,7 +199,7 @@ export default function CartPage() {
                 Account name: Fhp company
               </p>
               <p>3. Our Staffs will contact you for your order.</p>
-              <p>Please don't hesitate to contact us.</p>
+              <p>Please contact us if you have any questions.</p>
             </Box>
           </ColumnWrapper>
         </Center>
