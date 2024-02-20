@@ -36,7 +36,7 @@ const WhiteBox = styled(Link)`
 
 const Title = styled(Link)`
   font-weight: normal;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: inherit;
   text-decoration: none;
   margin: 0;
@@ -61,6 +61,7 @@ const Price = styled.div`
   font-size: 0.8rem;
   font-weight: 400;
   text-align: left;
+  color: #6444CD;
   @media screen and (min-width: 768px) {
     font-size: 1.2rem;
     font-weight: 400;
@@ -97,6 +98,7 @@ export default function ProductBox({
   description,
   price,
   images,
+  stockAvailability,
   wished=false,
   onRemoveFromWishlist=()=>{},
 }) {
@@ -128,9 +130,13 @@ export default function ProductBox({
         <Title href={url}>{title}</Title>
         <PriceRow>
           <Price>{price} Baht</Price>
+          {stockAvailability ? (
           <FlyingButton _id={_id} src={images?.[0]}>
           <CartIcon /> Add to cart
           </FlyingButton>
+          ) : (
+            <p>This product is currently not available.</p>
+          )}
         </PriceRow>
       </ProductInfoBox>
     </ProductWrapper>

@@ -19,6 +19,20 @@ const Intro = styled.div`
   color: #666;
 `;
 
+const MapContainer = styled.div`
+  position: relative;
+  width: 100%;
+  padding-top: 40%;
+`;
+
+const MapFrame = styled.iframe`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`;
+
 export default function AboutText() {
   return (
     <div>
@@ -42,17 +56,28 @@ export default function AboutText() {
           requirements may be, you can count on us to deliver the right parts,
           right on time.
         </p>
+       <h3 style={{ color: '#00004d',  textAlign: 'left'}}>Contact us:</h3>
+       <div style={{textAlign: 'left'}}>
+       <p>Email: Fhpcompany@gmail.com </p>
+       <p>Tel: 02-383-9400</p>
+       </div>
+      
+      
         <div>
-          <p style={{ color: 'blue' }}>Our Location</p>
-          <iframe
+          <h3 style={{ color: '#00004d',  textAlign: 'left', marginBottom: '5px'  }}>Our Location:</h3>
+          <p style={{textAlign: 'left'}}>99/95 Soi Phatthana Chumchon 1, Tambon Bang Kaeo, Amphoe Bang Phli, Chang Wat Samut Prakan 10540
+</p>
+          <MapContainer>
+          <MapFrame
             src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3877.2676668748604!2d100.64724907629036!3d13.641475165671324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDM4JzI5LjMiTiAxMDDCsDM5JzA3LjYiRQ!5e0!3m2!1sen!2sth!4v1708105982043!5m2!1sen!2sth"
-            width="650"
-            height="250"
+            width="500"
+            height="400"
             style={{border:0}}
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+          ></MapFrame>
+          </MapContainer>
         </div>
       </Textsize>
     </div>

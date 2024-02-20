@@ -1,5 +1,4 @@
 import AboutText from "@/components/AboutText";
-import GoogleMapsComponent from "@/components/GoogleMapsComponent";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 

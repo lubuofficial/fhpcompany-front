@@ -28,6 +28,7 @@ const PriceRow = styled.div`
 
 const Price = styled.span`
   font-size: 1rem;
+  color: #6444CD;
 `;
 
 const Box = styled.div`
@@ -42,6 +43,16 @@ const ButtonContainer = styled.div`
 
 export default function ProductPage({ product }) {
   // const {addProduct} = useContext(CartContext);
+  // const addToCartHandler = () => {
+  //   // Check if product is available
+  //   if (product.stockAvailability) {
+  //     // Add to cart logic here
+  //     alert("Product added to cart!");
+  //   } else {
+  //     alert("This product is currently not available.");
+  //   }
+  // };
+
   return (
     <>
       <Header />
@@ -52,18 +63,31 @@ export default function ProductPage({ product }) {
           </WhiteBox>
           <div>
             <Box>
-            <Title>{product.title}</Title>
-            <p>{product.description}</p>
-            <PriceRow>
-              <div>
-                <Price>{product.price} Baht</Price>
-              </div>
+              <Title>{product.title}</Title>
+              <p>{product.description}</p>
+              <PriceRow>
+                <div>
+                  <Price>{product.price} Baht</Price>
+                </div>
               </PriceRow>
-              <hr />
               <ButtonContainer>
-                <FlyingButton main _id={product._id} src={product.images?.[0]}>
-                  <CartIcon /> Add to cart
-                </FlyingButton>
+                {product.stockAvailability ? (
+                  <p>This Product is Available</p>
+                ) : (
+                  <p>This Product is not Available</p>
+                )}
+                <hr />
+                {product.stockAvailability ? (
+                  <FlyingButton
+                    main
+                    _id={product._id}
+                    src={product.images?.[0]}
+                  >
+                    <CartIcon /> Add to cart
+                  </FlyingButton>
+                ) : (
+                  <p>This product is currently not available.</p>
+                )}
               </ButtonContainer>
             </Box>
           </div>

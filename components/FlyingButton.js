@@ -57,7 +57,7 @@ export default function FlyingButton(props) {
     imgRef.current.style.top = (ev.clientY-50) + 'px';
     setTimeout(() => {
       imgRef.current.style.display = 'none';
-    }, 100);
+    }, 1000);
   }
 useEffect(() => {
   const interval = setInterval(() => {

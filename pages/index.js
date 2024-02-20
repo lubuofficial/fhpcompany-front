@@ -8,13 +8,15 @@ import { authOptions } from "./api/auth/[...nextauth]";
 import { WishedProduct } from "@/models/WishedProduct";
 import { Setting } from "@/models/Setting";
 import Footer from "@/components/Footer";
+import Carousel from "@/components/Carousel";
 
 export default function HomePage({featuredProduct,newProducts,wishedNewProducts}) {
   return (
     <div>
       <Header />
       <Featured product={featuredProduct}/>
-      <NewProducts products={newProducts} WishedProduct={wishedNewProducts} />
+      <Carousel />
+      <NewProducts products={newProducts} wishedProducts={wishedNewProducts} />
       <Footer />
     </div>
   );
