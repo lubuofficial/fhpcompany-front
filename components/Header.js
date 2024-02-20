@@ -72,8 +72,7 @@ const NavButton = styled.button`
   position: relative;
   z-index: 3;
   @media screen and (min-width: 768px) {
-    width: 30px;
-    height: 30px;
+    display: none;
   }
 `;
 
