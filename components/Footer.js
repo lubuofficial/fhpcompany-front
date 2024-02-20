@@ -40,7 +40,6 @@ const IconText = styled.span`
 export default function Footer () {
   return (
     <FooterContainer>
-      {/* <p>&copy; {new Date().getFullYear()} FHP Company. All Rights Reserved.</p> */}
       <div>
         <SocialIconsContainer>
           <SocialIconLink href="https://www.facebook.com/fluidhydropower/">
