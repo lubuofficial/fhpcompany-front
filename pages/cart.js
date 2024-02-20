@@ -196,7 +196,7 @@ export default function CartPage() {
               <p>
                 Bank name: Kasikorn Bank <br />
                 Account number: 0123456789 <br />
-                Account name: Fhp company
+                Account name: Fhp company 
               </p>
               <p>3. Our Staffs will contact you for your order.</p>
               <p>Please contact us if you have any questions.</p>
