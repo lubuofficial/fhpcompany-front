@@ -198,6 +198,8 @@ export default function CartPage() {
                 Account number: 0123456789 <br />
                 Account name: Fhp company
               </p>
+              <p>3. Our Staffs will contact you for your order.</p>
+              <p>If you have any questions or problems, don't hesitate to contact us.</p>
             </Box>
           </ColumnWrapper>
         </Center>
@@ -288,6 +290,7 @@ export default function CartPage() {
                 </Table>
               )}
             </Box>
+            <p>Note: Please note your total amount and your shipping fees will based on the distance. Please follow the instruction after click pay on delivery.</p>
           </RevealWrapper>
           {!!cartProducts?.length && (
             <RevealWrapper delay={100}>
@@ -341,7 +344,6 @@ export default function CartPage() {
                 <Button black block onClick={goToPayLater}>
                   Pay on Delivery
                 </Button>
-               
               </Box>
             </RevealWrapper>
           )}
