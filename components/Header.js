@@ -64,8 +64,8 @@ const NavLink = styled(Link)`
 
 const NavButton = styled.button`
   background-color: transparent;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border:0;
   color: white;
   cursor: pointer;
