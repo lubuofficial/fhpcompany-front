@@ -64,8 +64,8 @@ const NavLink = styled(Link)`
 
 const NavButton = styled.button`
   background-color: transparent;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border:0;
   color: white;
   cursor: pointer;
@@ -84,7 +84,7 @@ const SideIcons = styled.div`
     min-width: 20px;
     color:white;
      svg{
-       width:14px;
+       width:18px;
        height: 14px;
      }
   }
