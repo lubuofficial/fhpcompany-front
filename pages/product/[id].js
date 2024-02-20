@@ -6,6 +6,7 @@ import ProductReviews from "@/components/ProductReviews";
 import Title from "@/components/Title";
 import WhiteBox from "@/components/WhiteBox";
 import CartIcon from "@/components/icons/CartIcon";
+import TruckIcon from "@/components/icons/TruckIcon";
 import { mongooseConnect } from "@/lib/mongoose";
 import { Product } from "@/models/Product";
 import styled from "styled-components";
@@ -39,6 +40,18 @@ const Box = styled.div`
 
 const ButtonContainer = styled.div`
   margin-top: 15px; /* Adjust this value as needed */
+`;
+
+const SideIcons = styled.div`
+  // display: flex;
+  // align-items: center;
+  //   display: inline-block;
+  //   min-width: 20px;
+  //   color:black;
+     svg{
+       width:18px;
+       height: 18px;
+  }
 `;
 
 export default function ProductPage({ product }) {
@@ -77,6 +90,9 @@ export default function ProductPage({ product }) {
                   <p>This Product is not Available</p>
                 )}
                 <hr />
+                <SideIcons>
+                <p><TruckIcon/></p>
+                </SideIcons>
                 {product.stockAvailability ? (
                   <FlyingButton
                     main
