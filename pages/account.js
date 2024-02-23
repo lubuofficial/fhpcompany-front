@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import SingleOrder from "@/components/SingleOrder";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 const ColsWrapper = styled.div`
   display: grid;
@@ -220,6 +221,9 @@ export default function AccountPage() {
                     Login with Google
                   </Button>
                 )}
+                 <Link href={"/login"}>
+                <Button primary>Login</Button>
+                </Link>
               </WhiteBox>
             </RevealWrapper>
           </div>
