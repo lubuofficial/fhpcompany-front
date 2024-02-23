@@ -9,6 +9,7 @@ import { WishedProduct } from "@/models/WishedProduct";
 import { Setting } from "@/models/Setting";
 import Footer from "@/components/Footer";
 import Carousel from "@/components/Carousel";
+import MapChart from "@/components/MapChart";
 
 export default function HomePage({featuredProduct,newProducts,wishedNewProducts}) {
   return (
@@ -16,6 +17,7 @@ export default function HomePage({featuredProduct,newProducts,wishedNewProducts}
       <Header />
       <Featured product={featuredProduct}/>
       <Carousel />
+      <MapChart />
       <NewProducts products={newProducts} wishedProducts={wishedNewProducts} />
       <Footer />
     </div>

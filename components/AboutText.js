@@ -16,7 +16,7 @@ const Textsize = styled.div`
 const Intro = styled.div`
   text-align: center;
   font-size: 16px;
-  color: #666;
+  color: #7a3ce6;
 `;
 
 const MapContainer = styled.div`

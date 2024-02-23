@@ -29,7 +29,7 @@ const PriceRow = styled.div`
 
 const Price = styled.span`
   font-size: 1rem;
-  color: #6444CD;
+  color: #6444cd;
 `;
 
 const Box = styled.div`
@@ -48,11 +48,29 @@ const SideIcons = styled.div`
   //   display: inline-block;
   //   min-width: 20px;
   //   color:black;
-     svg{
-       width:18px;
-       height: 18px;
+  svg {
+    width: 22px;
+    height: 22px;
   }
 `;
+
+
+const DeliveryIcon = styled(TruckIcon)`
+  width: 24px; /* Adjust the width as needed */
+  height: 24px; /* Adjust the height as needed */
+  margin-right: 5px; 
+  vertical-align: middle;
+  margin-top: -5px;
+  color:  #7a3ce6;
+`;
+
+const StyledParagraph = styled.p`
+  display: flex; /* Use flexbox layout */
+  align-items: center; /* Align items vertically in the flex container */
+  display: inline-flex;
+  align-items: center; 
+  margin-top: 10px;
+  `;
 
 export default function ProductPage({ product }) {
   // const {addProduct} = useContext(CartContext);
@@ -90,9 +108,10 @@ export default function ProductPage({ product }) {
                   <p>This Product is not Available</p>
                 )}
                 <hr />
-                <SideIcons>
-                <p><TruckIcon/></p>
-                </SideIcons>
+                  <StyledParagraph>
+                    <DeliveryIcon/>
+                  Estimated handling time: 3-7 business day.
+                  </StyledParagraph>
                 {product.stockAvailability ? (
                   <FlyingButton
                     main

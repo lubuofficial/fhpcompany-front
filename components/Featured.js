@@ -6,7 +6,7 @@ import FlyingButton from "./FlyingButton";
 import { RevealWrapper } from "next-reveal";
 
 const Bg = styled.div`
-  background-color: #00004d;
+  background-color: #7a3ce6;
   color: #fff;
   padding: 50px 0;
 `;

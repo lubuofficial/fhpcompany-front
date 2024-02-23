@@ -221,9 +221,9 @@ export default function AccountPage() {
                     Login with Google
                   </Button>
                 )}
-                 <Link href={"/login"}>
+                 {/* <Link href={"/login"}>
                 <Button primary>Login</Button>
-                </Link>
+                </Link> */}
               </WhiteBox>
             </RevealWrapper>
           </div>
