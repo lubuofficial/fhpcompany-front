@@ -62,6 +62,7 @@ export default function ProductReviews({ product }) {
   const [stars, setStars] = useState(0);
   const [reviews, setReviews] = useState([]);
   const [reviewsLoading, setReviewsLoading] = useState(false);
+  
   function submitReview() {
     const data = { title, description, stars, product: product._id };
     axios.post("/api/reviews", data).then((res) => {
@@ -123,7 +124,7 @@ export default function ProductReviews({ product }) {
                       defaultHowMany={review.stars}
                     />
                     <time>
-                      {new Date(review.createdAt).toLocaleString("th-TH")}
+                      {(new Date(review.createdAt)).toLocaleString("th-TH")}
                     </time>
                   </ReviewHeader>
                   <h3>{review.title}</h3>

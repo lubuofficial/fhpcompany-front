@@ -6,6 +6,7 @@ import ProductReviews from "@/components/ProductReviews";
 import Title from "@/components/Title";
 import WhiteBox from "@/components/WhiteBox";
 import CartIcon from "@/components/icons/CartIcon";
+import Checkbox from "@/components/icons/Checkbox";
 import TruckIcon from "@/components/icons/TruckIcon";
 import { mongooseConnect } from "@/lib/mongoose";
 import { Product } from "@/models/Product";
@@ -72,6 +73,15 @@ const StyledParagraph = styled.p`
   margin-top: 10px;
   `;
 
+const CheckIcon = styled(Checkbox)`
+width: 24px; /* Adjust the width as needed */
+  height: 24px; /* Adjust the height as needed */
+  margin-right: 5px; 
+  vertical-align: middle;
+  margin-top: -5px;
+  color:  #7a3ce6;
+`;
+
 export default function ProductPage({ product }) {
   // const {addProduct} = useContext(CartContext);
   // const addToCartHandler = () => {
@@ -108,10 +118,14 @@ export default function ProductPage({ product }) {
                   <p>This Product is not Available</p>
                 )}
                 <hr />
-                  <StyledParagraph>
-                    <DeliveryIcon/>
-                  Estimated handling time: 3-7 business day.
-                  </StyledParagraph>
+                  {/* <StyledParagraph> */}
+                    
+                  <p><DeliveryIcon/>Estimated handling time: 3-7 business day. <br />
+                  <CheckIcon/>Warranty Coverage: <br/>
+                  <span style={{ marginLeft: "30px" }}>Defects in materials and workmanship for 2 months after purchase.</span> 
+                  </p>
+                  {/* </StyledParagraph> */}
+
                 {product.stockAvailability ? (
                   <FlyingButton
                     main

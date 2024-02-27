@@ -162,16 +162,16 @@ export default function MapChart() {
           </SideIcons>
           <p>
             {" "}
-            <Icon /> We are located at Samut Prakan.
+            <Mouse />Our platform is made to offer the most suitable options <br />
+            <span style={{ marginLeft: "30px" }}>for the particular tractor parts you require.</span>
           </p>
           <p>
             {" "}
-            <Mouse />Our platform is made to offer the most suitable options <br />
-            for the particular tractor parts you require.
-          </p>
-          <p> <Truck />
+            <Truck />
             We are shipping high-quality tractor spare parts <br />
-            all over Thailand.
+            <span style={{ marginLeft: "30px" }}>all over Thailand.</span>
+          </p>
+          <p> <Icon />Our company is located in Samut Prakan.
           </p>
         </WhiteBox>
       </Container>
