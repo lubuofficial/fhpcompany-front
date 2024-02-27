@@ -7,7 +7,6 @@ import {
 } from "react-simple-maps";
 import Center from "./Center";
 import styled from "styled-components";
-import WhiteBox from "./WhiteBox";
 import LocationIcon from "./icons/LocationIcon";
 import BuildingIcon from "./icons/BuildingIcon";
 import MouseIcon from "./icons/mouseIcon";
@@ -17,6 +16,8 @@ import TruckIcon from "./icons/TruckIcon";
 const Container = styled.div`
   display: flex;
   align-items: center;
+  @media screen and (max-width: 768px) {
+  }
 `;
 
 const Adjust = styled.div`
@@ -26,6 +27,11 @@ const Adjust = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: right;
+  @media screen and (max-width: 768px) {
+    align-items: right;
+    width: 55%;
+    height: 55%;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -34,8 +40,8 @@ const Wrapper = styled.div`
   border-style: none;
   margin-right: 400px;
   @media screen and (max-width: 768px) {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
   }
 `;
 
@@ -80,6 +86,20 @@ const ColoredBuildingIcon = styled(BuildingIcon)`
   color: #2b2185; 
 `;
 
+const WhiteBox = styled.div`
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 15px;
+  margin-left: 10px; /* Adjust the margin as needed */
+  width: fit-content; /* Adjust the width to fit the content */
+  @media screen and (max-width: 768px) {
+    width: 200px; 
+    margin-left: 10px; 
+    font-size: .7rem;
+    padding: 13px;
+  }
+`;
+
 // Export MapChart as default function
 export default function MapChart() {
   // GeoJSON data for Thailand
@@ -104,7 +124,7 @@ export default function MapChart() {
               data-tip=""
               projection="geoMercator" // Use Mercator projection for world map
               projectionConfig={{
-                rotate: [-100, -13, 5], // No rotation
+                rotate: [-101, -13, 5], // No rotation
                 scale: 3000, // Adjust scale as needed
               }}
               style={{ width: "100%", height: "100%" }}
@@ -147,7 +167,7 @@ export default function MapChart() {
           <p>
             {" "}
             <Mouse />Our platform is made to offer the most suitable options <br />
-            for the particular part you require.
+            for the particular tractor parts you require.
           </p>
           <p> <Truck />
             We are shipping high-quality tractor spare parts <br />

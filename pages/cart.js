@@ -191,11 +191,11 @@ export default function CartPage() {
             <Box>
               <h1>Thank you for your order.</h1>
               <p>Please follow the instructions provided for payment.</p>
-              <p>1. Transfer money to fhp company bank account. </p>
+              <p>1. Transfer money to fhp company bank account within 2 days to make sure that your order will proceed. </p>
               <p>2. Send your slip to this email: fhp123@mail.com</p>
               <p>
                 Bank name: Kasikorn Bank <br />
-                Account number: 0123456789 <br />
+                Account number: 0323613613 <br />
                 Account name: Fhp company 
               </p>
               <p>3. Our Staffs will contact you for your order.</p>
