@@ -72,6 +72,7 @@ export default function AccountPage() {
     setWishlistLoaded(false);
     setOrderLoaded(false);
     axios.get("/api/address").then((response) => {
+      if (response.data) {
       setName(response.data.name);
       setEmail(response.data.email);
       setAddress(response.data.address);
@@ -79,6 +80,13 @@ export default function AccountPage() {
       setPostalCode(response.data.postalCode);
       setPhone(response.data.phone);
       setAddressLoaded(true);
+    } else {
+      console.error("No data received from /api/address");
+    }
+  })
+  .catch((error) => {
+    console.error("Error fetching address data:", error);
+      
     });
     axios.get("/api/wishlist").then((response) => {
       setWishedProducts(response.data.map((wp) => wp.product));
@@ -157,7 +165,59 @@ export default function AccountPage() {
             <RevealWrapper delay={100}>
               <WhiteBox>
                 <h2>{session ? "Account details" : "Login"}</h2>
-                {!addressLoaded && <Spinner fullWidth={true} />}
+                {!addressLoaded && session &&(
+                <>
+                <Input
+                  type="text"
+                  placeholder="Name"
+                  value={name}
+                  name="name"
+                  onChange={(ev) => setName(ev.target.value)}
+                />
+                <Input
+                  type="text"
+                  placeholder="Email"
+                  value={email}
+                  name="email"
+                  onChange={(ev) => setEmail(ev.target.value)}
+                />
+                <Input
+                  type="text"
+                  placeholder="Address"
+                  value={address}
+                  name="address"
+                  onChange={(ev) => setAddress(ev.target.value)}
+                />
+                <ProvinceHolder>
+                  <Input
+                    type="text"
+                    placeholder="Province"
+                    value={province}
+                    name="province"
+                    onChange={(ev) => setProvince(ev.target.value)}
+                  />
+                  <Input
+                    type="text"
+                    placeholder="Postal Code"
+                    value={postalCode}
+                    name="postalCode"
+                    onChange={(ev) => setPostalCode(ev.target.value)}
+                  />
+                </ProvinceHolder>
+                <Input
+                  type="text"
+                  placeholder="Phone number"
+                  value={phone}
+                  name="phone"
+                  onChange={(ev) => setPhone(ev.target.value)}
+                />
+
+                <Button black block onClick={saveAddress}>
+                  Save
+                </Button>
+                <hr />
+              </>
+                )}
                 {addressLoaded && session && (
                   <>
                     <Input
