@@ -72,9 +72,11 @@ export default function ProductReviews({ product }) {
       loadReviews();
     });
   }
+
   useEffect(() => {
     loadReviews();
   }, []);
+
   function loadReviews() {
     setReviewsLoading(true);
     axios.get("/api/reviews?product=" + product._id).then((res) => {
@@ -103,7 +105,7 @@ export default function ProductReviews({ product }) {
               placeholder="Leave a product review"
             />
             <div>
-              <Button primary onclick={submitReview}>
+              <Button primary onClick={submitReview}>
                 Submit your review
               </Button>
             </div>
@@ -115,7 +117,7 @@ export default function ProductReviews({ product }) {
             {reviewsLoading && <Spinner fullWidth={true} />}
             {reviews.length === 0 && <p>No reviews</p>}
             {reviews.length > 0 &&
-              reviews.map(review => (
+              reviews.map((review) => (
                 <ReviewWrapper key={review._id}>
                   <ReviewHeader>
                     <StarsRating
