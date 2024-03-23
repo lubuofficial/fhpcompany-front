@@ -129,7 +129,7 @@ export default function ProductBox({
       <ProductInfoBox>
         <Title href={url}>{title}</Title>
         <PriceRow>
-          <Price>{price} Baht</Price>
+          <Price>{price.toLocaleString()} Baht</Price>
           {stockAvailability ? (
           <FlyingButton _id={_id} src={images?.[0]}>
           <CartIcon /> Add to cart

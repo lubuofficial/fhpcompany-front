@@ -11,6 +11,7 @@ import { RevealWrapper } from "next-reveal";
 import { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 
+
 const ColumnWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -31,7 +32,7 @@ const ColumnWrapper = styled.div`
   table tbody tr.subtotal td:nth-child(2) {
     font-size: 1.4rem;
   }
-  tr.total td{
+  tr.total td {
     font-weight: bold;
   }
 `;
@@ -98,6 +99,7 @@ export default function CartPage() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [payLater, setPayLater] = useState(false);
   const [shippingFee, setShippingFee] = useState(null);
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     if (cartProducts.length > 0) {
@@ -154,6 +156,11 @@ export default function CartPage() {
   // }
 
   async function goToPayLater() {
+    if (!name || !email || !address || !province || !postalCode || !phone) {
+      setShowPopup(true); 
+      return;
+    }
+
     const response = await axios.post("/api/paylater", {
       name,
       email,
@@ -166,7 +173,7 @@ export default function CartPage() {
 
     if (response.data.payLater) {
       // Handle success, e.g., display a success message to the user
-      
+
       setPayLater(true);
       clearCart();
     } else {
@@ -180,7 +187,8 @@ export default function CartPage() {
     const price = products.find((p) => p._id === productId)?.price || 0;
     productsTotal += price;
   }
-  const cartSubtotal = productsTotal + (shippingFee ? parseInt(shippingFee) : 0);
+  // const cartSubtotal =
+  //   productsTotal + (shippingFee ? parseInt(shippingFee) : 0);
 
   if (payLater) {
     return (
@@ -191,12 +199,15 @@ export default function CartPage() {
             <Box>
               <h1>Thank you for your order.</h1>
               <p>Please follow the instructions provided for payment.</p>
-              <p>1. Transfer money to fhp company bank account within 2 days to make sure that your order will proceed. </p>
+              <p>
+                1. Transfer money to fhp company bank account within 2 days to
+                make sure that your order will proceed.{" "}
+              </p>
               <p>2. Send your slip to this email: fhp123@mail.com</p>
               <p>
                 Bank name: Kasikorn Bank <br />
                 Account number: 0323613613 <br />
-                Account name: Fhp company 
+                Account name: Fhp company
               </p>
               <p>3. Our Staffs will contact you for your order.</p>
               <p>Please contact us if you have any questions.</p>
@@ -207,21 +218,21 @@ export default function CartPage() {
     );
   }
 
-  if (isSuccess) {
-    return (
-      <>
-        <Header />
-        <Center>
-          <ColumnWrapper>
-            <Box>
-              <h1>Thank you for your order.</h1>
-              <p>We will email you when your order will be sent.</p>
-            </Box>
-          </ColumnWrapper>
-        </Center>
-      </>
-    );
-  }
+  // if (isSuccess) {
+  //   return (
+  //     <>
+  //       <Header />
+  //       <Center>
+  //         <ColumnWrapper>
+  //           <Box>
+  //             <h1>Thank you for your order.</h1>
+  //             <p>We will email you when your order will be sent.</p>
+  //           </Box>
+  //         </ColumnWrapper>
+  //       </Center>
+  //     </>
+  //   );
+  // }
   return (
     <>
       <Header />
@@ -290,7 +301,11 @@ export default function CartPage() {
                 </Table>
               )}
             </Box>
-            <p>Note: Please note your total amount and your shipping fees will based on the distance. Please follow the instruction after click pay on delivery.</p>
+            <p>
+              Note: Please note your total amount and your shipping fees will
+              based on the distance. Please follow the instruction after click
+              pay on delivery.
+            </p>
           </RevealWrapper>
           {!!cartProducts?.length && (
             <RevealWrapper delay={100}>
@@ -340,8 +355,9 @@ export default function CartPage() {
                   name="phone"
                   onChange={(ev) => setPhone(ev.target.value)}
                 />
-                
-                <Button black block onClick={goToPayLater}>
+                <Button black block onClick={goToPayLater}
+                 disabled={!name || !email || !address || !province || !postalCode || !phone}
+                >
                   Pay on Delivery
                 </Button>
               </Box>
